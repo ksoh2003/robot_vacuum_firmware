@@ -3,7 +3,7 @@ idf_component_register(
             "src/main.cpp"
             "src/Map.cpp"
             "src/Run.cpp"
-            "src/Mortor.cpp"
+            "src/Motor.cpp"
         INCLUDE_DIRS
             "include"
         PRIV_REQUIRES

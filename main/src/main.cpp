@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../include/Run.hpp"
-#include "../include/Mortor.hpp"
+#include "../include/Motor.hpp"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -20,10 +20,10 @@ void ReadMPU(void* parameter) {
   }
 }
 
-void RunMortor(void* parameter) {
-  auto* mortor = static_cast<Mortor*>(parameter);
+void RunMotor(void* parameter) {
+  auto* motor = static_cast<Motor*>(parameter);
   while (1) {
-    mortor->MortorRun(1);
+    motor->MotorRun(1);
     vTaskDelay(60);
   }
 }
@@ -33,8 +33,8 @@ extern "C" void app_main() {
   std::cout << "Start Logic" << std::endl;
   i2cdev_init();
   static Run run;
-  static Mortor mortor;
+  static Motor motor;
   // xTaskCreate(GetDistance, "GetDistance", 2048, &run, 5, NULL);
   xTaskCreate(ReadMPU, "ReadMPU", 2048, &run, 5, NULL);
-  // xTaskCreate(RunMortor, "RunMortor", 2048, &mortor, 5, NULL);
+  // xTaskCreate(RunMotor, "RunMotor", 2048, &motor, 5, NULL);
 }
