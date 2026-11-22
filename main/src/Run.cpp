@@ -18,7 +18,7 @@
   - GPIO21
   - GPIO22
   - GPIO23 (모터)
-  - GPIO25 ("")
+  - GPIO25 (모터)
   - GPIO26 (모터)
   - GPIO27 (흡입 모터 DIR, 0 & 1로 동작 방향 결정)
   - GPIO32 (흡입 모터 PWM)
