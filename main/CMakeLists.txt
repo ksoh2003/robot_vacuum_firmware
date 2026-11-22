@@ -1,0 +1,14 @@
+idf_component_register(
+        SRCS
+            "src/main.cpp"
+            "src/Map.cpp"
+            "src/Run.cpp"
+            "src/Mortor.cpp"
+        INCLUDE_DIRS
+            "include"
+        PRIV_REQUIRES
+            esp_driver_gpio
+            esp_timer
+            freertos
+            esp_driver_i2c
+)
