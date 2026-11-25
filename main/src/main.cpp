@@ -34,6 +34,7 @@ extern "C" void app_main() {
   i2cdev_init();
   static Run run;
   static Motor motor;
+  motor.VacuumMotor(30); // 30%로 흡입 모터 구동
   // xTaskCreate(GetDistance, "GetDistance", 2048, &run, 5, NULL);
   xTaskCreate(ReadMPU, "ReadMPU", 2048, &run, 5, NULL);
   // xTaskCreate(RunMotor, "RunMotor", 2048, &motor, 5, NULL);

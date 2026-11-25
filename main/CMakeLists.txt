@@ -11,4 +11,5 @@ idf_component_register(
             esp_timer
             freertos
             esp_driver_i2c
+            esp_driver_ledc
 )
